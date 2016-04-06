@@ -32,7 +32,8 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href=""><b>Compartiendo conocimiento</b></a>
+
+          <a class="navbar-brand" href=""><img src="assets/img/logocc.png" width="32" > <b>Compartiendo conocimiento</b></a>
         </div>
       </div>
     </div>
@@ -42,7 +43,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
-					<h1><strong>Un nuevo evento esta por iniciar...</strong></h1>
+          <div id="typed-strings">
+          <p>Muy pronto</p>
+          <p>Un nuevo evento esta por iniciar...</p>
+
+        </div>
+					<h1><strong><span id="typed" style="white-space:pre;"></span></strong></h1>
 					<!-- <form class="form-inline" role="form">
 					  <div class="form-group">
 					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Correo electrónico">
@@ -178,8 +184,32 @@
 	</div><!-- /container -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Placed at the end of the document so the pages load fasterx
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script>
+    $(function(){
+        $("#typed").typed({
+            // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
+            stringsElement: $('#typed-strings'),
+            typeSpeed: 30,
+            backDelay: 500,
+            loop: false,
+            contentType: 'html', // or text
+            // defaults to false for infinite loop
+            loopCount: false,
+            callback: function(){ foo(); },
+            resetCallback: function() { newTyped(); }
+        });
+        $(".reset").click(function(){
+            $("#typed").typed('reset');
+        });
+    });
+    function newTyped(){ /* A new typed object */ }
+    function foo(){ console.log("Callback"); }
+    </script>
+
   </body>
 </html>
