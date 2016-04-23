@@ -1,8 +1,4 @@
 # Static and media development files.
-media/
-src/assets/
-static/
-staticfiles/
 
 # gulp-compass metafile
 css
